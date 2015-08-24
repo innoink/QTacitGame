@@ -10,6 +10,8 @@ INCLUDEPATH += ..
 OBJECTS_DIR = $$QTACITGAME_OBJ_COMMON
 MOC_DIR= $$QTACITGAME_MOC_COMMON
 
-SOURCES += 
+SOURCES += \ 
+    gamemap.cpp
 
-HEADERS  += 
+HEADERS  += \ 
+    gamemap.hpp
