@@ -1,0 +1,18 @@
+QT -= gui widgets
+
+TARGET = QTacitGameServer
+TEMPLATE = app
+
+include (../QTacitGame.pri)
+
+INCLUDEPATH += ..
+
+LIBS += -L$$QTACITGAME_BIN
+LIBS += -lQTacitGame
+
+INCLUDEPATH += $$QTACITGAME_COMMON
+
+OBJECTS_DIR = $$QTACITGAME_OBJ_SERVER
+MOC_DIR= $$QTACITGAME_MOC_SERVER
+
+SOURCES += main.cpp

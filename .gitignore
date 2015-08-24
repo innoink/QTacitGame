@@ -1,28 +1,17 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+*.pro.user*
 
-# Precompiled Headers
-*.gch
-*.pch
+bin/*
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+obj_common
 
-# Fortran module files
-*.mod
+obj_client
+moc_client
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+obj_server
+moc_server
 
-# Executables
-*.exe
-*.out
-*.app
+Makefile
+*/Makefile
+
+cov-html
+app*
