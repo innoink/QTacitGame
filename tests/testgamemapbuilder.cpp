@@ -2,6 +2,8 @@
 
 #include "gamemapbuilder.hpp"
 
+#include <stdexcept>
+
 TEST(TestGameMapBuilder, MapNoState)
 {
     const auto map = QTacitGame::GameMapBuilder::fromJson(R"STR({ "states" : [] })STR");
