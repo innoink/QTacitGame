@@ -1,9 +1,9 @@
 #!/bin/bash
 
-OBJ_DIR=$PWD/obj_lib
+OBJ_DIR=$PWD/obj_common
 QMAKE=qmake
 
-DIR_OPTIONS="--base-directory $PWD/lib --directory $OBJ_DIR" #--directory obj_tests --directory tests
+DIR_OPTIONS="--base-directory $PWD/common --directory $OBJ_DIR" #--directory obj_tests --directory tests
 
 function error_exit
 {
