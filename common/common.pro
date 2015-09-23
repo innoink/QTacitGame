@@ -20,4 +20,4 @@ HEADERS  += \
     ../externals/json.h \
     gamemap.hpp \
     gamemapbuilder.hpp \
-    utils/jsonhelper.hpp
+    utils/json_helper.hpp

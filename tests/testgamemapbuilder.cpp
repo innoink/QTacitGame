@@ -15,3 +15,14 @@ TEST(TestGameMapBuilder, MapWithOneState)
     ASSERT_EQ(std::size_t{1}, map.numberOfSates());
     EXPECT_EQ(state_name, map.stateName(0));
 }
+
+TEST(TestGameMapBuilder, ThrowOnMapNoStateField)
+{
+    EXPECT_THROW(QTacitGame::GameMapBuilder::fromJson(R"STR({ })STR"), std::runtime_error);
+}
+
+TEST(TestGameMapBuilder, ThrowOnMapInvalidStateType)
+{
+    EXPECT_THROW(QTacitGame::GameMapBuilder::fromJson(R"STR({ "states" : [ .1 ] })STR"), std::invalid_argument);
+}
+
