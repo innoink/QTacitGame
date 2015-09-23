@@ -18,9 +18,12 @@ public:
      * @brief stateName Return the name of a state given its indentifier.
      * @param index The index of the state
      * @return The name of the state
-     * @pre index < numberOfSates()
+     * @pre exists(index)
      */
     std::string stateName(const StateIndexType index) const;
+
+    bool exists(const StateIndexType index) const;
+    bool exists(const std::string& name) const;
 
 private:
      StateContainer m_states;

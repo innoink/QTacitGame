@@ -10,6 +10,8 @@ moc_client
 obj_server
 moc_server
 
+obj_tests
+
 Makefile
 */Makefile
 
