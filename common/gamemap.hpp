@@ -5,12 +5,15 @@
 
 namespace QTacitGame
 {
+    class GameMapBuilder;
 
     class GameMap
     {
     public:
         using StateContainer = std::vector<std::string>;
         using StateIndexType = std::size_t;
+
+        friend class GameMapBuilder;
 
         GameMap() = default;
         ~GameMap() = default;

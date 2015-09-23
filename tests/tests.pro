@@ -1,4 +1,5 @@
 QT -= gui widgets
+CONFIG -= QT
 
 TARGET = tests
 TEMPLATE = app
@@ -18,6 +19,7 @@ OBJECTS_DIR = $$QTACITGAME_OBJ_TESTS
 MOC_DIR= $$QTACITGAME_MOC_TESTS
 
 SOURCES += main.cpp \
-    testgamemap.cpp
+    testgamemap.cpp \
+    testgamemapbuilder.cpp
 
 HEADERS +=

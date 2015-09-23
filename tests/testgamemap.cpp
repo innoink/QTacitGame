@@ -4,7 +4,7 @@
 
 struct TestEmptyGameMap : public ::testing::Test
 {
-    GameMap m;
+    QTacitGame::GameMap m;
 };
 
 TEST_F(TestEmptyGameMap, NumberOfStatesEqualsZero)

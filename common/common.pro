@@ -1,4 +1,5 @@
 QT -= gui widgets
+CONFIG -= QT
 
 TARGET = QTacitGame
 TEMPLATE = lib
@@ -11,7 +12,12 @@ OBJECTS_DIR = $$QTACITGAME_OBJ_COMMON
 MOC_DIR= $$QTACITGAME_MOC_COMMON
 
 SOURCES += \ 
-    gamemap.cpp
+    ../externals/json.cc \
+    gamemap.cpp \
+    gamemapbuilder.cpp
 
 HEADERS  += \ 
-    gamemap.hpp
+    ../externals/json.h \
+    gamemap.hpp \
+    gamemapbuilder.hpp \
+    utils/jsonhelper.hpp
