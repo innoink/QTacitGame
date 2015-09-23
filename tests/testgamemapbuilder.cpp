@@ -21,6 +21,11 @@ TEST(TestGameMapBuilder, ThrowOnMapNoStateField)
     EXPECT_THROW(QTacitGame::GameMapBuilder::fromJson(R"STR({ })STR"), std::runtime_error);
 }
 
+TEST(TestGameMapBuilder, ThrowOnMapInvalidStateFieldType)
+{
+    EXPECT_THROW(QTacitGame::GameMapBuilder::fromJson(R"STR({ "states" : 5 })STR"), std::runtime_error);
+}
+
 TEST(TestGameMapBuilder, ThrowOnMapInvalidStateType)
 {
     EXPECT_THROW(QTacitGame::GameMapBuilder::fromJson(R"STR({ "states" : [ .1 ] })STR"), std::invalid_argument);

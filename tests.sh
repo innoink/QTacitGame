@@ -1,9 +1,9 @@
 #!/bin/bash
 
-OBJ_DIR=$PWD/obj_lib
+OBJ_DIR=$PWD/obj_common
 QMAKE=qmake
 
-DIR_OPTIONS="--base-directory $PWD/lib --directory $OBJ_DIR" #--directory obj_tests --directory tests
+DIR_OPTIONS="--base-directory $PWD/common --directory $OBJ_DIR" #--directory obj_tests --directory tests
 
 function error_exit
 {
@@ -30,7 +30,7 @@ lcov --add-tracefile app.baseline --add-tracefile app --output-file app.info
 
 echo "removing useless data"
 lcov --remove app.info "/usr*" --output-file app.info
-lcov --remove app.info "external/*" --output-file app.info
+lcov --remove app.info "externals/*" --output-file app.info
 lcov --remove app.info "*/ETL/etl/*" --output-file app.info
 
 echo "generation html doc"
