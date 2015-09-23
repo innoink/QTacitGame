@@ -3,28 +3,33 @@
 #include <string>
 #include <vector>
 
-class GameMap
+namespace QTacitGame
 {
-public:
-    using StateContainer = std::vector<std::string>;
-    using StateIndexType = std::size_t;
 
-    GameMap() = default;
-    ~GameMap() = default;
+    class GameMap
+    {
+    public:
+        using StateContainer = std::vector<std::string>;
+        using StateIndexType = std::size_t;
 
-    std::size_t numberOfSates() const;
+        GameMap() = default;
+        ~GameMap() = default;
 
-    /**
-     * @brief stateName Return the name of a state given its indentifier.
-     * @param index The index of the state
-     * @return The name of the state
-     * @pre exists(index)
-     */
-    std::string stateName(const StateIndexType index) const;
+        std::size_t numberOfSates() const;
 
-    bool exists(const StateIndexType index) const;
-    bool exists(const std::string& name) const;
+        /**
+         * @brief stateName Return the name of a state given its indentifier.
+         * @param index The index of the state
+         * @return The name of the state
+         * @pre exists(index)
+         */
+        std::string stateName(const StateIndexType index) const;
 
-private:
-     StateContainer m_states;
-};
+        bool exists(const StateIndexType index) const;
+        bool exists(const std::string& name) const;
+
+    private:
+         StateContainer m_states;
+    };
+
+} //QTacitGame
