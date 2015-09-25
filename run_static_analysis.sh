@@ -8,5 +8,5 @@ echo $POS
 for x in `find $POS/common $POS/client $POS/server $POS/tests -name *.cpp`;
 do 
    echo "analyse de $x"
-   clang++ -std=c++11 --analyze -Xanalyzer -analyzer-output=text -I $POS/commun/include -I $POS/serveur/include $x 2>> $RES_FILE
+   clang++ -std=c++11 --analyze -Xanalyzer -analyzer-output=text -I $POS -I $POS/common $x 2>> $RES_FILE
 done
