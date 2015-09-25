@@ -14,10 +14,12 @@ MOC_DIR= $$QTACITGAME_MOC_COMMON
 SOURCES += \ 
     ../externals/json.cc \
     gamemap.cpp \
-    gamemapbuilder.cpp
+    gamemapbuilder.cpp \
+    bid.cpp
 
 HEADERS  += \ 
     ../externals/json.h \
     gamemap.hpp \
     gamemapbuilder.hpp \
-    utils/json_helper.hpp
+    utils/json_helper.hpp \
+    bid.hpp
