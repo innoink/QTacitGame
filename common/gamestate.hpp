@@ -46,6 +46,14 @@ namespace QTacitGame
 		CurrentBidsContainer_t m_current_bids;
 
 		void resolveCollisions();
+
+		/**
+		* @brief addBid
+		* @pre player_id < m_number_of_players
+		* @param player_id
+		* @param bid
+		*/
+		void addBid(const std::size_t player_id, const Bid& bid);
 	};
 
 } // QTacitGame

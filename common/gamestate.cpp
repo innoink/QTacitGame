@@ -22,14 +22,7 @@ namespace QTacitGame
 		assert(bids.size() == m_number_of_players);
 		for(std::size_t i = 0; i < bids.size(); i++)
 		{
-			for(const auto& b : bids[i])
-			{
-				if(b.second > 0)
-				{
-					m_current_bids[b.first].player_id = i;
-					m_current_bids[b.first].number_of_tokens += b.second;
-				}
-			}
+			addBid(i, bids[i]);
 		}
 		resolveCollisions();
 	}
@@ -37,5 +30,18 @@ namespace QTacitGame
 	auto GameState::currentBids() const -> CurrentBidsContainer_t { return m_current_bids; }
 
 	void GameState::resolveCollisions() {}
+
+	void GameState::addBid(const std::size_t player_id, const Bid& bid)
+	{
+		assert(player_id < m_number_of_players);
+		for(const auto& b : bid)
+		{
+			if(b.second > 0)
+			{
+				m_current_bids[b.first].player_id = player_id;
+				m_current_bids[b.first].number_of_tokens += b.second;
+			}
+		}
+	}
 
 } // QTacitGame
