@@ -2,6 +2,8 @@
 
 #include <vector>
 
+#include <boost/optional.hpp>
+
 namespace QTacitGame
 {
 
@@ -11,6 +13,7 @@ namespace QTacitGame
 	/**
 	* @brief The GameState class
 	* @invariant m_current_bids.size() == map.numberOfSates()
+	* @invariant each current bid has at most one element.
 	*/
 	class GameState
 	{
@@ -21,7 +24,8 @@ namespace QTacitGame
 			std::size_t number_of_tokens;
 		};
 
-		using CurrentBidsContainer_t = std::vector<CurrentBid>;
+		using CurrentBidsContainer_t = std::vector<boost::optional<CurrentBid>>;
+		using TemporaryBidsContainer_t = std::vector<std::vector<CurrentBid>>;
 
 		GameState(const GameMap& map, const std::size_t number_of_players);
 		~GameState() = default;
@@ -35,7 +39,7 @@ namespace QTacitGame
 
 		/**
 		* @brief currentBids
-		* @post res.size() == map.numberOfSates()
+		* @post res.size() == map.numberOfStates()
 		* @return
 		*/
 		CurrentBidsContainer_t currentBids() const;
@@ -43,7 +47,7 @@ namespace QTacitGame
 	private:
 		const GameMap& m_map;
 		const std::size_t m_number_of_players;
-		CurrentBidsContainer_t m_current_bids;
+		TemporaryBidsContainer_t m_current_bids;
 
 		void resolveCollisions();
 
@@ -53,7 +57,9 @@ namespace QTacitGame
 		* @param player_id
 		* @param bid
 		*/
-		void addBid(const std::size_t player_id, const Bid& bid);
+		void addBidsForPlayer(const std::size_t player_id, const Bid& bid);
+
+		void checkInvariants() const;
 	};
 
 } // QTacitGame
