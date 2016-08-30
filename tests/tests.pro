@@ -21,6 +21,7 @@ MOC_DIR= $$QTACITGAME_MOC_TESTS
 SOURCES += main.cpp \
     testgamemap.cpp \
     testgamemapbuilder.cpp \
-    testbid.cpp
+    testbid.cpp \
+    testgamestate.cpp
 
 HEADERS +=

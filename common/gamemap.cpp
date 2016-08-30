@@ -6,7 +6,7 @@
 namespace QTacitGame
 {
 
-	std::size_t GameMap::numberOfSates() const { return m_states.size(); }
+	std::size_t GameMap::numberOfStates() const { return m_states.size(); }
 
 	std::string GameMap::stateName(const StateIndexType index) const
 	{
@@ -21,7 +21,7 @@ namespace QTacitGame
 							 std::find(begin(m_states), end(m_states), state_name));
 	}
 
-	bool GameMap::exists(const StateIndexType index) const { return index < numberOfSates(); }
+	bool GameMap::exists(const StateIndexType index) const { return index < numberOfStates(); }
 
 	bool GameMap::exists(const std::string& name) const
 	{

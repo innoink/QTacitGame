@@ -16,7 +16,7 @@ namespace QTacitGame
 	{
 		assert(m_map.exists(state));
 		auto it = m_bids.find(state);
-		assert(it != end(m_bids));
+		assert(it != std::end(m_bids));
 		return it->second;
 	}
 
@@ -24,7 +24,11 @@ namespace QTacitGame
 	{
 		assert(m_map.exists(state));
 		auto it = m_bids.find(state);
-		assert(it != end(m_bids));
+		assert(it != std::end(m_bids));
 		it->second++;
 	}
+
+	auto Bid::begin() const -> ConstIterator_t { return m_bids.begin(); }
+
+	auto Bid::end() const -> ConstIterator_t { return m_bids.end(); }
 }

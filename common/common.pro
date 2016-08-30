@@ -15,11 +15,13 @@ SOURCES += \
     ../externals/json.cc \
     gamemap.cpp \
     gamemapbuilder.cpp \
-    bid.cpp
+    bid.cpp \
+    gamestate.cpp
 
 HEADERS  += \ 
     ../externals/json.h \
     gamemap.hpp \
     gamemapbuilder.hpp \
     utils/json_helper.hpp \
-    bid.hpp
+    bid.hpp \
+    gamestate.hpp
