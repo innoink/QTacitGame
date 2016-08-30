@@ -7,7 +7,7 @@ struct TestEmptyGameMap : public ::testing::Test
 	QTacitGame::GameMap m;
 };
 
-TEST_F(TestEmptyGameMap, NumberOfStatesEqualsZero) { ASSERT_EQ(std::size_t{}, m.numberOfSates()); }
+TEST_F(TestEmptyGameMap, NumberOfStatesEqualsZero) { ASSERT_EQ(std::size_t{}, m.numberOfStates()); }
 
 TEST_F(TestEmptyGameMap, NothingExists)
 {

@@ -24,7 +24,7 @@ namespace QTacitGame
 		GameMap() = default;
 		~GameMap() = default;
 
-		std::size_t numberOfSates() const;
+		std::size_t numberOfStates() const;
 
 		/**
 		 * @brief stateName Return the name of a state given its indentifier.
