@@ -40,4 +40,4 @@ after_success:
   - cat app.info
 #  - cat lcov.log
 #  - cat lcov.err
-  - coveralls --exclude tests --gcov-options '\-lp' -t UpKHpXQ4LnpkMZYyhiFw1fZ8iLuzAIZgp
+  - coveralls --exclude tests --gcov-options '\-lp'
