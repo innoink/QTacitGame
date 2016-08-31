@@ -12,7 +12,6 @@ before_install:
   - chmod 755 tests.sh
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo add-apt-repository ppa:ubuntu-sdk-team/ppa -y
-#  - sudo add-apt-repository ppa:apokluda/boost1.53 -y
   - sudo apt-get update -qq
   - sudo apt-cache search qt
   - sudo apt-cache search gcc
@@ -22,7 +21,7 @@ before_install:
   - sudo apt-get install google-mock
   - sudo apt-get install -qq qt5-qmake qtbase5-dev qt5-default qttools5-dev-tools
   - sudo apt-get update
-  - sudo apt-get install libboost1.53-dev #libboost-filesystem1.53-dev libboost-program-options1.53-dev
+  - sudo apt-get install libboost1.55-dev
   - chmod 755 ci/build_gtest.sh
   - sudo ci/build_gtest.sh
   - chmod 755 ci/build_etl.sh
