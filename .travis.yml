@@ -41,4 +41,4 @@ after_success:
 #  - cat lcov.log
 #  - cat lcov.err
   - ls -l
-  - coveralls --exclude tests --exclude obj_tests --gcov-options '\-lp' --verbose
+  - coveralls --exclude tests --exclude obj_tests --exclude moc_* --exclude externals --gcov-options '\-lp' --verbose
