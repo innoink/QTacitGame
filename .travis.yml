@@ -11,6 +11,8 @@ before_install:
   - sudo add-apt-repository ppa:ubuntu-sdk-team/ppa -y
   - sudo add-apt-repository ppa:apokluda/boost1.53 -y
   - sudo apt-get update -qq
+  - sudo apt-cache search qt
+  - sudo apt-cache search gcc
   - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.9; fi
   - if [ "$CXX" = "g++" ]; then sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90; fi
   - sudo apt-get install libgtest-dev
