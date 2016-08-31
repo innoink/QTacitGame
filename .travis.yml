@@ -32,12 +32,14 @@ before_install:
   - tar xf lcov_1.9.orig.tar.gz
   - sudo make -C lcov-1.9/ install
   # install lcov to coveralls conversion + upload tool
-  - gem install coveralls-lcov
+#  - gem install coveralls-lcov
+  - pip install --user cpp-coveralls
 
 after_success:
-  - lcov --list app.info # debug before upload
-  - coveralls-lcov app.info # uploads
-  - ls -lrth
+#  - lcov --list app.info # debug before upload
+#  - coveralls-lcov app.info # uploads
+#  - ls -lrth
   - cat app.info
 #  - cat lcov.log
 #  - cat lcov.err
+  - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
