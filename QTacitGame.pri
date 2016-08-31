@@ -20,9 +20,9 @@ QTACITGAME_MOC_TESTS = $$QTACITGAME_ROOT/moc_tests
 
 DESTDIR = $$QTACITGAME_BIN
 
-CONFIG += c++14
+CONFIG += c++11
 
-QMAKE_CXXFLAGS += -std=c++14 -g -O0 --coverage -fno-inline -fno-inline-small-functions -fno-default-inline -Wall -Wextra -pedantic -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings \
+QMAKE_CXXFLAGS += -std=c++11 -g -O0 --coverage -fno-inline -fno-inline-small-functions -fno-default-inline -Wall -Wextra -pedantic -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings \
                     -Wredundant-decls -Wno-long-long -Wuninitialized
 
 LIBS += --coverage
