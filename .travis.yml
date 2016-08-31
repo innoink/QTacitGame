@@ -13,8 +13,8 @@ before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo add-apt-repository ppa:ubuntu-sdk-team/ppa -y
   - sudo apt-get update -qq
-  - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.9; fi
-  - if [ "$CXX" = "g++" ]; then sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90; fi
+#  - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.9; fi
+#  - if [ "$CXX" = "g++" ]; then sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90; fi
   - sudo apt-get install libgtest-dev
   - sudo apt-get install google-mock
   - sudo apt-get install -qq qt5-qmake qtbase5-dev qt5-default qttools5-dev-tools
@@ -26,9 +26,9 @@ before_install:
   - sudo ci/build_etl.sh
 #  - wget http://ftp.de.debian.org/debian/pool/main/l/lcov/lcov_1.11.orig.tar.gz
 #  - tar xf lcov_1.11.orig.tar.gz
-  - wget http://ftp.de.debian.org/debian/pool/main/l/lcov/lcov_1.9.orig.tar.gz
-  - tar xf lcov_1.9.orig.tar.gz
-  - sudo make -C lcov-1.9/ install
+#  - wget http://ftp.de.debian.org/debian/pool/main/l/lcov/lcov_1.9.orig.tar.gz
+#  - tar xf lcov_1.9.orig.tar.gz
+#  - sudo make -C lcov-1.9/ install
   # install lcov to coveralls conversion + upload tool
 #  - gem install coveralls-lcov
   - pip install --user cpp-coveralls
@@ -37,8 +37,9 @@ after_success:
 #  - lcov --list app.info # debug before upload
 #  - coveralls-lcov app.info # uploads
 #  - ls -lrth
-  - cat app.info
+#  - cat app.info
 #  - cat lcov.log
 #  - cat lcov.err
 #  - coveralls --exclude tests --exclude obj_tests --exclude moc_tests --exclude externals --include common --gcov-options '\-lp' --verbose
+#  - coveralls --exclude externals --include common --gcov-options '\-lp' --verbose
   - cpp-coveralls --gcov /usr/bin/gcov-4.8 --exclude externals --include common --gcov-options '\-lp' --verbose
