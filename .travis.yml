@@ -31,7 +31,7 @@ before_install:
   - sudo make -C lcov-1.9/ install
   # install lcov to coveralls conversion + upload tool
 #  - gem install coveralls-lcov
-  - pip install --user cpp-coveralls
+  - pip install --user cpp-coveralls yaml
 
 after_success:
 #  - lcov --list app.info # debug before upload
