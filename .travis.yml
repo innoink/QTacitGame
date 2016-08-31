@@ -40,5 +40,4 @@ after_success:
   - cat app.info
 #  - cat lcov.log
 #  - cat lcov.err
-  - ls -l
-  - coveralls --exclude tests --exclude obj_tests --exclude moc_tests --exclude externals --include common --gcov-options '\-lp' --verbose
+  - coveralls --exclude tests --exclude obj_tests --exclude moc_tests --exclude externals --exclude /usr/include --include common --gcov-options '\-lp' --verbose
